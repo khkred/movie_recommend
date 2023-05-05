@@ -9,15 +9,15 @@ class CustomTheme {
       scaffoldBackgroundColor: Palette.almostBack,
       textTheme: theme.primaryTextTheme
           .copyWith(
-            labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          )
+        labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
+          color: Colors.white,
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+      )
           .apply(
-            displayColor: Colors.white,
-          ),
+        displayColor: Colors.white,
+      ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           backgroundColor: Palette.red500,
@@ -25,6 +25,7 @@ class CustomTheme {
       ),
       appBarTheme: const AppBarTheme(elevation: 0, color: Palette.almostBack),
       colorScheme: ColorScheme.fromSwatch(
+        brightness: Brightness.dark, // Set brightness here
         primarySwatch: MaterialColor(
           Palette.red500.value,
           const {
