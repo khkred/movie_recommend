@@ -66,38 +66,40 @@ class _GenreScreenState extends State<GenreScreen> {
           onPressed: widget.previousPage,
         ),
       ),
-      body: Column(
-        children: [
-          Text(
-            "Let's start with a genre",
-            style: theme.textTheme.headlineSmall,
-            textAlign: TextAlign.center,
-          ),
-          Expanded(
-              child: ListView.separated(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: kListItemSpacing),
-                  itemBuilder: (context, index) {
-                    final genre = genres[index];
-                    return ListCard(
-                      genre: genre,
-                      onTap: () => toggleSelected(genre),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return const SizedBox(
-                      height: kListItemSpacing,
-                    );
-                  },
-                  itemCount: genres.length)),
-          PrimaryButton(
-            onPressed: widget.nextPage,
-            text: 'Continue',
-          ),
-          const SizedBox(
-            height: kButtonBottomDivider,
-          ),
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              "Let's start with a genre",
+              style: theme.textTheme.headlineSmall,
+              textAlign: TextAlign.center,
+            ),
+            Expanded(
+                child: ListView.separated(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: kListItemSpacing),
+                    itemBuilder: (context, index) {
+                      final genre = genres[index];
+                      return ListCard(
+                        genre: genre,
+                        onTap: () => toggleSelected(genre),
+                      );
+                    },
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(
+                        height: kListItemSpacing,
+                      );
+                    },
+                    itemCount: genres.length)),
+            PrimaryButton(
+              onPressed: widget.nextPage,
+              text: 'Continue',
+            ),
+            const SizedBox(
+              height: kMediumSpacing,
+            ),
+          ],
+        ),
       ),
     );
   }

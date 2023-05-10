@@ -9,21 +9,32 @@ class CustomTheme {
       scaffoldBackgroundColor: Palette.almostBack,
       textTheme: theme.primaryTextTheme
           .copyWith(
-        labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
-          color: Colors.white,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
-      )
+            labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          )
           .apply(
-        displayColor: Colors.white,
-      ),
+            displayColor: Colors.white,
+          ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           backgroundColor: Palette.red500,
         ),
       ),
-      appBarTheme: const AppBarTheme(elevation: 0, color: Palette.almostBack),
+      appBarTheme: const AppBarTheme(
+        elevation: 0,
+        color: Palette.almostBack,
+      ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: Colors.white,
+        inactiveTrackColor: Colors.grey.shade800,
+        thumbColor: Colors.white,
+        valueIndicatorColor: Palette.red500,
+        inactiveTickMarkColor: Colors.transparent,
+        activeTickMarkColor: Colors.transparent
+      ),
       colorScheme: ColorScheme.fromSwatch(
         brightness: Brightness.dark, // Set brightness here
         primarySwatch: MaterialColor(
