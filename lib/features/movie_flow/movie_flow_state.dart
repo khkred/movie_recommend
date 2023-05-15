@@ -17,7 +17,23 @@ const movieMock = Movie(
 const genresMock = [
   Genre(name: "Adventure"),
   Genre(name: "Fantasy"),
-  Genre(name: "Comedy")
+  Genre(name: "Comedy"),
+  Genre(name: "Action"),
+  Genre(name: "Thriller"),
+  Genre(name: "Mystery"),
+  Genre(name: "Romance"),
+  Genre(name: "Horror"),
+  Genre(name: "Science Fiction"),
+  Genre(name: "Drama"),
+  Genre(name: "Historical Fiction"),
+  Genre(name: "Crime"),
+  Genre(name: "Western"),
+  Genre(name: "War"),
+  Genre(name: "Superhero"),
+  Genre(name: "Animation"),
+  Genre(name: "Musical"),
+  Genre(name: "Sports"),
+  Genre(name: "Documentary")
 ];
 
 @immutable
