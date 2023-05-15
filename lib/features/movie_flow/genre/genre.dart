@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'genre_entity.dart';
 
 @immutable
 class Genre {
@@ -6,12 +7,18 @@ class Genre {
   final bool isSelected;
   final int id;
 
-   const Genre({required this.name, this.id = 0, this.isSelected = false});
+  const Genre({required this.name, this.id = 0, this.isSelected = false});
+
+  factory Genre.fromEntity(GenreEntity genreEntity) {
+    return Genre(
+      name: genreEntity.name,
+      id: genreEntity.id,
+      isSelected: false,
+    );
+  }
 
   Genre toggleSelected() {
-    return Genre(name: name,
-    id: id,
-    isSelected: !isSelected);
+    return Genre(name: name, id: id, isSelected: !isSelected);
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:movie_recommend/features/movie_flow/genre/genre.dart';
+import 'package:movie_recommend/features/movie_flow/result/movie_entity.dart';
 
 @immutable
 class Movie {
@@ -20,7 +21,22 @@ class Movie {
       this.backdropPath,
       this.posterPath});
 
-  Movie.intial()
+  factory Movie.fromEntity(MovieEntity movieEntity, List<Genre> genres) {
+    return Movie(
+        title: movieEntity.title,
+        overview: movieEntity.overview,
+        voteAverage: movieEntity.voteAverage,
+        genres: genres
+            .where((genre) => movieEntity.genreIds.contains(genre.id))
+            .toList(growable: false),
+        releaseDate: movieEntity.releaseDate,
+        backdropPath:
+            "https://image.tmdb.org/t/p/original/${movieEntity.backdropPath}",
+        posterPath:
+            "https://image.tmdb.org/t/p/original/${movieEntity.posterPath}");
+  }
+
+  Movie.initial()
       : title = '',
         overview = '',
         voteAverage = 0,
