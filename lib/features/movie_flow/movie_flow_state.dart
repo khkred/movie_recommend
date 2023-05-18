@@ -1,53 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_recommend/features/movie_flow/genre/genre.dart';
 import 'package:movie_recommend/features/movie_flow/result/movie.dart';
-
-const movieMock = Movie(
-    title: 'Dungeons & Dragons: Honor Among Thieves (2023)',
-    overview:
-        "A charming thief and a band of unlikely adventurers undertake an epic heist to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people.",
-    voteAverage: 4,
-    genres: [
-      Genre(name: "Adventure"),
-      Genre(name: "Fantasy"),
-      Genre(name: "Comedy")
-    ],
-    releaseDate: "03/31/2023");
-
-const genresMock = [
-  Genre(name: "Adventure"),
-  Genre(name: "Fantasy"),
-  Genre(name: "Comedy"),
-  Genre(name: "Action"),
-  Genre(name: "Thriller"),
-  Genre(name: "Mystery"),
-  Genre(name: "Romance"),
-  Genre(name: "Horror"),
-  Genre(name: "Science Fiction"),
-  Genre(name: "Drama"),
-  Genre(name: "Historical Fiction"),
-  Genre(name: "Crime"),
-  Genre(name: "Western"),
-  Genre(name: "War"),
-  Genre(name: "Superhero"),
-  Genre(name: "Animation"),
-  Genre(name: "Musical"),
-  Genre(name: "Sports"),
-  Genre(name: "Documentary")
-];
 
 @immutable
 class MovieFlowState {
   final PageController pageController;
   final int rating;
   final int yearsBack;
-  final List<Genre> genres;
-  final Movie movie;
+  final AsyncValue<List<Genre>> genres;
+  final AsyncValue<Movie> movie;
 
   const MovieFlowState({
     required this.pageController,
-    this.movie = movieMock,
-    this.genres = genresMock,
+    required this.movie,
+    required this.genres,
     this.rating = 5,
     this.yearsBack = 10,
   });
@@ -56,8 +23,8 @@ class MovieFlowState {
     PageController? pageController,
     int? rating,
     int? yearsBack,
-    List<Genre>? genres,
-    Movie? movie,
+    AsyncValue<List<Genre>>? genres,
+    AsyncValue<Movie>? movie,
   }) {
     return MovieFlowState(
       pageController: pageController ?? this.pageController,
