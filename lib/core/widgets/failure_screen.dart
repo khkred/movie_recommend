@@ -18,6 +18,7 @@ class FailureBody extends StatelessWidget {
   const FailureBody({required this.message, Key? key}) : super(key: key);
 
   final String message;
+  final String h = 'test';
 
   @override
   Widget build(BuildContext context) {
