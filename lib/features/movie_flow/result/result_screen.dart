@@ -4,7 +4,6 @@ import 'package:movie_recommend/core/constants.dart';
 import 'package:movie_recommend/core/failure.dart';
 import 'package:movie_recommend/core/widgets/failure_screen.dart';
 import 'package:movie_recommend/core/widgets/primary_button.dart';
-import 'package:movie_recommend/features/movie_flow/genre/genre.dart';
 import 'package:movie_recommend/features/movie_flow/movie_flow_controller.dart';
 import 'package:movie_recommend/features/movie_flow/result/movie.dart';
 
@@ -141,7 +140,7 @@ class MovieImageDetails extends ConsumerWidget {
             children: [
               Text(
                 movie.title,
-                style: theme.textTheme.headline6,
+                style: theme.textTheme.titleLarge,
               ),
               Text(
                 movie.genresCommaSeparated,

@@ -32,12 +32,12 @@ class YearBackScreen extends ConsumerWidget {
               children: [
                 Text(
                   '${ref.read(movieFlowControllerProvider).yearsBack.ceil()}',
-                  style: theme.textTheme.headline2,
+                  style: theme.textTheme.displayMedium,
                 ),
                 Text(
                   'Years Back',
-                  style: theme.textTheme.headline4?.copyWith(
-                    color: theme.textTheme.headline4?.color?.withOpacity(0.62),
+                  style: theme.textTheme.headlineMedium?.copyWith(
+                    color: theme.textTheme.headlineMedium?.color?.withOpacity(0.62),
                   ),
                 )
               ],

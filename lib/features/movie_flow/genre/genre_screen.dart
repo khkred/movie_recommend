@@ -15,8 +15,6 @@ class GenreScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final previous =
-        ref.read(movieFlowControllerProvider.notifier).previousPage;
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(

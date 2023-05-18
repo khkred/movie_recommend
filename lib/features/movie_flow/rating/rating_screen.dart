@@ -31,7 +31,7 @@ class RatingScreen extends ConsumerWidget {
               children: [
                 Text(
                   '${ref.watch(movieFlowControllerProvider).rating.ceil()}',
-                  style: theme.textTheme.headline2,
+                  style: theme.textTheme.displayMedium,
                 ),
                 const Icon(Icons.star_rounded, color: Colors.amber, size: 62)
               ],
