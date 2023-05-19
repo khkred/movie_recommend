@@ -47,6 +47,8 @@ class RatingScreen extends ConsumerWidget {
                   ref
                       .read(movieFlowControllerProvider.notifier)
                       .updateRating(value.toInt());
+
+
                 }),
             const Spacer(),
             PrimaryButton(

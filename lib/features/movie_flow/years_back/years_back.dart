@@ -22,7 +22,7 @@ class YearBackScreen extends ConsumerWidget {
         child: Column(
           children: [
             Text(
-              "Let's start with a genre",
+              "No. of years back",
               style: theme.textTheme.headlineSmall,
               textAlign: TextAlign.center,
             ),
@@ -46,7 +46,7 @@ class YearBackScreen extends ConsumerWidget {
             Slider(
                 value:
                     ref.watch(movieFlowControllerProvider).yearsBack.toDouble(),
-                min: 0,
+                min: 1,
                 max: 70,
                 divisions: 70,
                 label:
@@ -55,6 +55,7 @@ class YearBackScreen extends ConsumerWidget {
                   ref
                       .read(movieFlowControllerProvider.notifier)
                       .updateYearsBack(value.toInt());
+                  debugPrint("Movie years back: $value");
                 }),
             const Spacer(),
             PrimaryButton(

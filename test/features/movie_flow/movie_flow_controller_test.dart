@@ -53,7 +53,7 @@ void main() {
     });
   });
 
-  for (final rating in [0,7,10,2,-2]) {
+  for (var rating in [0,7,10,2,-4]) {
     test('Given different ratings When updating rating with $rating Then that should be represented', () async {
       container.read(movieFlowControllerProvider.notifier).updateRating(rating);
 
@@ -63,9 +63,9 @@ void main() {
   
   for (final yearsBack in [0, 7, 70, 2, -2]) {
     test('Given different yearsBack When updating yearsBack with $yearsBack Then that should be represented', () async {
-      container.read(movieFlowControllerProvider.notifier).updateRating(yearsBack);
+      container.read(movieFlowControllerProvider.notifier).updateYearsBack(yearsBack);
 
-      expect(container.read(movieFlowControllerProvider).yearsBack, yearsBack < 0 ? 0 : yearsBack);
+      expect(container.read(movieFlowControllerProvider).yearsBack, yearsBack < 0 ? 0: yearsBack);
     });
   }
 }

@@ -68,10 +68,18 @@ class MovieFlowController extends StateNotifier<MovieFlowState> {
   }
 
   void updateRating(int updatedRating) {
+    if(updatedRating < 0)
+      {
+        updatedRating = 0;
+      }
     state = state.copyWith(rating: updatedRating);
   }
 
   void updateYearsBack(int updatedYearsBack) {
+
+    if(updatedYearsBack < 0) {
+      updatedYearsBack = 0;
+    }
     state = state.copyWith(yearsBack: updatedYearsBack);
   }
 
